@@ -32,9 +32,9 @@ jobs:
           npm install
           npm run build
           cp -r ./dist/* ../Backend/public
-
+                    
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: fooddel-app
           path: Food-Del/Backend
@@ -50,12 +50,9 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: fooddel-app
-
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
       
       - name: Login to Azure
         uses: azure/login@v1
