@@ -8,7 +8,7 @@ import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 //app config
 const app = express()
-const port = 4000
+const port = process.env.PORT || 4000
 
 // middleware
 app.use(express.json())
@@ -28,7 +28,10 @@ res.send("API Working")
 
 
 })
-
+app.use(express.static("../frontend/dist"));
+app.get("*",(req,res) => {
+    res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"))
+});
 const url = process.env.Azure_URL
 
 app.listen(port,()=>{
