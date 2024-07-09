@@ -29,8 +29,10 @@ res.send("API Working")
 
 })
 
+const url = process.env.Azure_URL
+
 app.listen(port,()=>{
-    console.log(`server started on http://localhost:${port}`)
+    console.log(`server started on ${url}:${port}`)
 })
 
 //mongodb+srv://prajaktanimbalkar04:<password>@cluster0.ryarmxz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
