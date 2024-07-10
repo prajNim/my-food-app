@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   //const Azure_URL= "tomato-fooddel.azurewebsites.net";
   const Azure_URL= "https://tomato-fooddel.azurewebsites.net";
-  const port = 4000;
+  const port = 8080;
   const url = `${Azure_URL}: ${port}` ;
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
